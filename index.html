@@ -61,7 +61,6 @@ This tutorial is divided into three parts, namely:</p>
 <li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
 </li>
 <li>Click on EC2 icon</li>
-<li>Click on EC2 icon</li>
 <li>Click on Key Pair</li>
 <li>Click on Create Key Pair and give a unique name for it</li>
 <li>Save the private key to your computer</li>
@@ -73,9 +72,23 @@ This tutorial is divided into three parts, namely:</p>
 <li>Make sure there is an access key inside or create new one if you don't have any</li>
 </ul><h3>Setting up S3</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>After we configured the EC2, now we are going to play with the data. For this tutorial, we are going to use the sample datasets that can downloaded from the following link:
+Amazon S3:
+Dropbox: </p>
 
-<h3>Authors and Contributors</h3>
+<p>The zip file that you download will contain two files, sample-data.txt and wordSplitter.py. Unzip the zip file and follow these steps to upload it into the Amazon Simple Storage Service (S3)
+Setting up S3:</p>
+
+<ul>
+<li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
+</li>
+<li>Click on S3 icon</li>
+<li>Create new Bucket and give a unique name to it</li>
+<li>Choose Singapore as the Region</li>
+<li>Upload the downloaded wordSplitter.py</li>
+<li>Create new folder and named it 'input'</li>
+<li>Upload the sample-data.txt into the 'input' folder</li>
+</ul><h3>Authors and Contributors</h3>
 
 <p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
