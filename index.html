@@ -70,7 +70,7 @@ This tutorial is divided into three parts, namely:</p>
 <li>Click on Security Credentials tab under you account name on the top right</li>
 <li>Click on the Access Key tab under Access Credentials</li>
 <li>Make sure there is an access key inside or create new one if you don't have any</li>
-</ul><h3>Setting up S3</h3>
+</ul><h3>Setting up Simple Storage Service (S3)</h3>
 
 <p>After we configured the EC2, now we are going to play with the data. For this tutorial, we are going to use the sample datasets that can downloaded from the following link:
 Amazon S3:
@@ -88,13 +88,37 @@ Setting up S3:</p>
 <li>Upload the downloaded wordSplitter.py</li>
 <li>Create new folder and named it 'input'</li>
 <li>Upload the sample-data.txt into the 'input' folder</li>
-</ul><h3>Authors and Contributors</h3>
+</ul><h3>Running Elastic MapReduce (EMR)</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>The last step of our tutorial, in this step we will be processing the data that we uploaded into Amazon S3 using Amazon Elastic MapReduce. Follow these steps to run the EMR:</p>
+
+<ul>
+<li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
+</li>
+<li>Click on Elastic MapReduce icon</li>
+<li>Click on Create New Job Flow</li>
+<li>Give any name it doesn't have to be unique</li>
+<li>Click on the dropdown list and choose 'Streaming', click continue</li>
+<li>Insert your S3 bucket name/input (e.g. 'myawesomebucket/input') for the Input Location</li>
+<li>Insert your S3 bucket name/output (e.g. 'myawesomebucket/output') for the Output Location</li>
+<li>Insert your S3 bucket name/wordSplitter.py (e.g. 'myawesomebucket/wordSplitter.py') for the Mapper</li>
+<li>Insert 'aggregate' for the Reducer, click continue</li>
+<li>Don't change anything in 'Configure EC2 Instances', click continue</li>
+<li>Click on the Amazon EC2 Key Pair's dropdown list and choose the key pair that we have just created at the precious step, click continue</li>
+<li>Don't change anything in 'Bootstrap Actions', click continue</li>
+<li>Don't change anything in 'Review', click Create Job Flow</li>
+<li>Click close</li>
+</ul><p>Now you can see that the Job Flow is running, you can see the progress by clicking on it. You can go grab a cup of coffee while the cloud is processing the big data.</p>
+
+<h3>Geting the Results</h3>
+
+<p>When the Job Flow is completed, you can see the result by going to the S3 bucket that we created earlier. Click on the output folder and download 'part-000', which contains the results.</p>
+
+<p>Congratulations you have just become more awesome.</p>
 
 <h3>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>If you encounter any problem while following this tutorial, you can email me at indraadam.darmawan@gmail.com. Alternatively you can check <a href="forums.aws.amazon.com">AWS Forum</a> for any enquiry or information regarding Amazon Web Service.</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/IndraAdamDarmawan">IndraAdamDarmawan</a></p>
