@@ -41,7 +41,7 @@
       <section>
         <h3>Welcome to Cloud &amp; Big Data Tutorial.</h3>
 
-<p>This is a tutorial for processing large datasets that can only be processed with high computational power that is cloud. In this tutorial we are going to use Amazon Elastic Map Reducer (EMR), an amazingly powerful data processing service provided by Amazon Web Service. By following this tutorial, you can harness the power of cloud for processing big data in a matter of minutes.
+<p>This is a tutorial for processing large datasets that can only be processed with high computational power that is cloud. In this tutorial we are going to use Amazon Elastic MapReducer (EMR), an amazingly powerful data processing service provided by Amazon Web Service. By following this tutorial, you can harness the power of cloud for processing big data in a matter of minutes.
 This tutorial is divided into three parts, namely:</p>
 
 <pre><code>- Configuring EC2 and Security Credentials
@@ -51,11 +51,23 @@ This tutorial is divided into three parts, namely:</p>
 
 <p>To run this tutorial, you will need to sign up for <a href="http://aws.amazon.com">AWS account</a>. </p>
 
-<h3>Designer Templates</h3>
+<h3>Configuring EC2 and Security Credentials</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>To be able to run the Elastic MapReducer smoothly, we will need to make sure that EC2 and Security Credentials are configured correctly.</p>
 
-<h3>Rather Drive Stick?</h3>
+<p>Create EC2 Key Pair:
+1. Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
+2. Click on EC2 icon
+3. Click on Key Pair
+4. Click on Create Key Pair and give a unique name for it
+5. Save the private key to your computer</p>
+
+<p>Configure Security Credentials
+1. Click on Security Credentials tab under you account name on the top right
+2. Click on the Access Key tab under Access Credentials
+3. Make sure there is an access key inside or create new one if you don't have any</p>
+
+<h3>Setting up S3</h3>
 
 <p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
