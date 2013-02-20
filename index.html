@@ -1,44 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Indra's IS429 Assignment 2 by IndraAdamDarmawan</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Indra's IS429 Assignment 2 : Big Data Processing Tutorial" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Indra's IS429 Assignment 2</title>
   </head>
+
   <body>
 
-      <header>
-        <h1>Indra's IS429 Assignment 2</h1>
-        <p>Big Data Processing Tutorial</p>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/IndraAdamDarmawan/cloudassignment2">View on GitHub</a>
 
-      <div id="banner">
-        <span id="logo"></span>
+          <h1 id="project_title">Indra's IS429 Assignment 2</h1>
+          <h2 id="project_tagline">Big Data Processing Tutorial</h2>
 
-        <a href="https://github.com/IndraAdamDarmawan/cloudassignment2" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/IndraAdamDarmawan/cloudassignment2/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/IndraAdamDarmawan/cloudassignment2/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/IndraAdamDarmawan/cloudassignment2/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/IndraAdamDarmawan/cloudassignment2/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h3>Welcome to Cloud &amp; Big Data Tutorial.</h3>
 
 <p>This is a tutorial for processing large datasets that can only be processed with high computational power that is cloud. In this tutorial we are going to use Amazon Elastic MapReducer (EMR), an amazingly powerful data processing service provided by Amazon Web Service. By following this tutorial, you can harness the power of cloud for processing big data in a matter of minutes.
@@ -57,60 +49,66 @@ This tutorial is divided into three parts, namely:</p>
 
 <p>Create EC2 Key Pair:  </p>
 
-<ul>
-<li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
-</li>
-<li>Click on EC2 icon</li>
-<li>Click on Key Pair</li>
-<li>Click on Create Key Pair and give a unique name for it</li>
-<li>Save the private key to your computer</li>
-</ul><p>Configure Security Credentials</p>
+<pre><code>- Go to your [AWS Management Console](https://console.aws.amazon.com/console/home)
+- Click on EC2 icon
+- Click on Key Pair
+- Click on Create Key Pair and give a unique name for it
+- Save the private key to your computer
+</code></pre>
+
+<p>Configure Security Credentials:</p>
+
+<pre><code>- Click on Security Credentials tab under you account name on the top right
+- Click on the Access Key tab under Access Credentials
+- Make sure there is an access key inside or create new one if you don't have any
+</code></pre>
+
+<h3>Setting up Simple Storage Service (S3)</h3>
+
+<p>After we configured the EC2, now we are going to play with the data. For this tutorial, we are going to use the sample datasets that can downloaded from the following link:</p>
 
 <ul>
-<li>Click on Security Credentials tab under you account name on the top right</li>
-<li>Click on the Access Key tab under Access Credentials</li>
-<li>Make sure there is an access key inside or create new one if you don't have any</li>
-</ul><h3>Setting up Simple Storage Service (S3)</h3>
-
-<p>After we configured the EC2, now we are going to play with the data. For this tutorial, we are going to use the sample datasets that can downloaded from the following link:
-Amazon S3:
-Dropbox: </p>
-
-<p>The zip file that you download will contain two files, sample-data.txt and wordSplitter.py. Unzip the zip file and follow these steps to upload it into the Amazon Simple Storage Service (S3)
+<li>Amazon S3:</li>
+<li>Dropbox: </li>
+</ul><p>The zip file that you download will contain two files, sample-data.txt and wordSplitter.py. Unzip the zip file and follow these steps to upload it into the Amazon Simple Storage Service (S3)
 Setting up S3:</p>
 
-<ul>
-<li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
-</li>
-<li>Click on S3 icon</li>
-<li>Create new Bucket and give a unique name to it</li>
-<li>Choose Singapore as the Region</li>
-<li>Upload the downloaded wordSplitter.py</li>
-<li>Create new folder and named it 'input'</li>
-<li>Upload the sample-data.txt into the 'input' folder</li>
-</ul><h3>Running Elastic MapReduce (EMR)</h3>
+<pre><code>- Go to your [AWS Management Console](https://console.aws.amazon.com/console/home)
+- Click on S3 icon
+- Create new Bucket and give a unique name to it
+- Choose Singapore as the Region
+- Upload the downloaded wordSplitter.py
+- Create new folder and named it 'input'
+- Upload the sample-data.txt into the 'input' folder
+</code></pre>
+
+<h3>Running Elastic MapReduce (EMR)</h3>
 
 <p>The last step of our tutorial, in this step we will be processing the data that we uploaded into Amazon S3 using Amazon Elastic MapReduce. Follow these steps to run the EMR:</p>
 
-<ul>
-<li>Go to your <a href="https://console.aws.amazon.com/console/home">AWS Management Console</a>
-</li>
-<li>Click on Elastic MapReduce icon</li>
-<li>Click on Create New Job Flow</li>
-<li>Give any name it doesn't have to be unique</li>
-<li>Click on the dropdown list and choose 'Streaming', click continue</li>
-<li>Insert your S3 bucket name/input (e.g. 'myawesomebucket/input') for the Input Location</li>
-<li>Insert your S3 bucket name/output (e.g. 'myawesomebucket/output') for the Output Location</li>
-<li>Insert your S3 bucket name/wordSplitter.py (e.g. 'myawesomebucket/wordSplitter.py') for the Mapper</li>
-<li>Insert 'aggregate' for the Reducer, click continue</li>
-<li>Don't change anything in 'Configure EC2 Instances', click continue</li>
-<li>Click on the Amazon EC2 Key Pair's dropdown list and choose the key pair that we have just created at the precious step, click continue</li>
-<li>Don't change anything in 'Bootstrap Actions', click continue</li>
-<li>Don't change anything in 'Review', click Create Job Flow</li>
-<li>Click close</li>
-</ul><p>Now you can see that the Job Flow is running, you can see the progress by clicking on it. You can go grab a cup of coffee while the cloud is processing the big data.</p>
+<pre><code>- Go to your [AWS Management Console](https://console.aws.amazon.com/console/home)
+- Click on Elastic MapReduce icon
+- Click on Create New Job Flow
+- Give any name it doesn't have to be unique
+- Click on the dropdown list and choose 'Streaming', click continue
+- Insert your S3 bucket name/input (e.g. 'myawesomebucket/input') 
+  for the Input Location
+- Insert your S3 bucket name/output (e.g. 'myawesomebucket/output') 
+  for the Output Location
+- Insert your S3 bucket name/wordSplitter.py (e.g. 'myawesomebucket/wordSplitter.py') 
+  for the Mapper
+- Insert 'aggregate' for the Reducer, click continue
+- Don't change anything in 'Configure EC2 Instances', click continue
+- Click on the Amazon EC2 Key Pair's dropdown list and choose the key pair 
+  that we have just created at the precious step, click continue
+- Don't change anything in 'Bootstrap Actions', click continue
+- Don't change anything in 'Review', click Create Job Flow
+- Click close
+</code></pre>
 
-<h3>Geting the Results</h3>
+<p>Now you can see that the Job Flow is running, you can see the progress by clicking on it. You can go grab a cup of coffee while the cloud is processing the big data.</p>
+
+<h3>Getting the Results</h3>
 
 <p>When the Job Flow is completed, you can see the result by going to the S3 bucket that we created earlier. Click on the output folder and download 'part-000', which contains the results.</p>
 
@@ -120,12 +118,17 @@ Setting up S3:</p>
 
 <p>If you encounter any problem while following this tutorial, you can email me at indraadam.darmawan@gmail.com. Alternatively you can check <a href="forums.aws.amazon.com">AWS Forum</a> for any enquiry or information regarding Amazon Web Service.</p>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/IndraAdamDarmawan">IndraAdamDarmawan</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Indra's IS429 Assignment 2 maintained by <a href="https://github.com/IndraAdamDarmawan">IndraAdamDarmawan</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
+
   </body>
 </html>
